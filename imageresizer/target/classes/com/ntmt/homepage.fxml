@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/13" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ntmt.HomepageController">
+   <left>
+      <VBox spacing = "30.0" prefHeight="200.0" prefWidth="100.0" alignment="CENTER">
+         <children>
+            <Button fx:id="crop" mnemonicParsing="false" text="Crop" onAction="#switchToCrop"/>
+            <Button fx:id="upscale" mnemonicParsing="false" text="Upscale" onAction="#switchToUpscale"/>
+            <Button fx:id="resize" mnemonicParsing="false" text="Resize" onAction="#switchToResize"/>
+            <Button fx:id="format" mnemonicParsing="false" text="Format Type" onAction="#switchToFormat"/>
+            <Button fx:id="preset" mnemonicParsing="false" text="Add Preset" onAction="#switchToPreset"/>
+         </children>
+      </VBox>
+   </left>
+   <right>
+   <VBox alignment="CENTER">
+        <children>
+      <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <javafx.scene.image.Image url="@logo.png" />
+         </image>
+      </ImageView>
+        </children>
+    </VBox>
+   </right>
+</BorderPane>
