@@ -1,9 +1,11 @@
 package com.ntmt;
 
 import java.io.IOException;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
+import javafx.scene.control.Button;
 
 import java.io.File;
 
@@ -18,14 +20,10 @@ public class SPController {
     @FXML
     private TextField imgHeight;
 
+    @FXML private Button chooseFilesButton;
     @FXML
     private void handleChooseFileButtonPressed() {
-        FileChooser fileChooser = new FileChooser();
-        File selectedFile = fileChooser.showOpenDialog(null);
-        if (selectedFile != null) {
-            filePath.setText(selectedFile.getParent());
-            fileName.setText(selectedFile.getName());
-        }
+        System.out.println("");
     }
 
     @FXML
@@ -40,4 +38,19 @@ public class SPController {
     private void goToHome() throws IOException {
         App.setRoot("homepage");
     } 
+
+    public void initialize(){
+        chooseFilesButton.setOnAction(event -> {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("JPEG", "*.jpg"),
+                new FileChooser.ExtensionFilter("PNG", "*.png")
+            );
+        File selectedFile = fileChooser.showOpenDialog(null);
+        if (selectedFile != null) {
+            filePath.setText(selectedFile.getParent());
+            fileName.setText(selectedFile.getName());
+        }
+    });
+    }
 }

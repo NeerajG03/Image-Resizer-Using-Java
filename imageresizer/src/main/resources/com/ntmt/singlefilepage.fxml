@@ -11,7 +11,7 @@
 <BorderPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ntmt.SFController">
     <center>
         <VBox alignment="CENTER">
-            <Button text="Choose File" onAction="#handleChooseFileButtonPressed"/>
+            <Button text="Choose File" fx:id="chooseFilesButton" onAction="#handleChooseFileButtonPressed"/>
         </VBox>
     </center>
 

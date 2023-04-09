@@ -9,35 +9,35 @@ import javafx.stage.FileChooser;
 
 import java.io.File;
 
-public class SFController {
-    @FXML private Button chooseFilesButton;
-
+public class FormatController{
     @FXML
     private TextField filePath;
+    @FXML
+    private TextField fileType;
 
     @FXML
     private TextField fileName;
 
-    @FXML
-    private TextField fileSize;
 
+    @FXML private Button chooseFilesButton;
     @FXML
     private void handleChooseFileButtonPressed() {
-        System.out.println("lmao");
+        System.out.println("");
     }
 
     @FXML
     private void handleSubmit() {
         // Save file using the information in the text fields
-        System.out.println("File path" + filePath.getText());
-        System.out.println("File Size" + fileSize.getText());
-        System.out.println("File name" + fileName.getText());
+        System.out.println("File path ->" + filePath.getText());
+        System.out.println("File name ->" + fileName.getText());
+        System.out.println("File type -> "+fileType.getText());
+
     }
 
     @FXML
     private void goToHome() throws IOException {
         App.setRoot("homepage");
-    } 
+    }
 
     public void initialize(){
         chooseFilesButton.setOnAction(event -> {

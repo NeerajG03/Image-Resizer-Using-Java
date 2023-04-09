@@ -22,6 +22,10 @@ public class BPController {
     public void initialize() {
         chooseFilesButton.setOnAction(event -> {
             FileChooser fileChooser = new FileChooser();
+            fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("JPEG", "*.jpg"),
+                new FileChooser.ExtensionFilter("PNG", "*.png")
+            );
             fileChooser.setTitle("Select Files");
             files = fileChooser.showOpenMultipleDialog(chooseFilesButton.getScene().getWindow());
             if (files != null) {
