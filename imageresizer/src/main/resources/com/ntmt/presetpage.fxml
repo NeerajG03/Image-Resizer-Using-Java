@@ -8,14 +8,18 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.stage.FileChooser?>
 
-<BorderPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ntmt.PresetController">
+<BorderPane fx:id="rootPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ntmt.PresetController">
 
     <center>
         <HBox alignment="CENTER" spacing="10">
             <Button text="Pixel Height(px)" onAction="#goToPixel"/>
             <Button text="File size(mb)" onAction="#goToFileSize"/>
-            <Button text="Cancel" onAction="#goToHome"/>
         </HBox>
     </center>
+    <bottom>
+        <VBox alignment="CENTER" spacing="10">
+            <Button text="Cancel" onAction="#goToHome"/>
+        </VBox>
+    </bottom>
 
 </BorderPane>

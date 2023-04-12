@@ -4,22 +4,23 @@ import java.io.IOException;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.stage.FileChooser;
 
 import java.io.File;
 
 public class SFController {
+
     @FXML private Button chooseFilesButton;
-
-    @FXML
-    private TextField filePath;
-
-    @FXML
-    private TextField fileName;
-
-    @FXML
-    private TextField fileSize;
+    @FXML private TextField filePath;
+    @FXML private TextField fileName;
+    @FXML private TextField fileSize;
+    @FXML private Label label1;
+    @FXML private Label label2;
+    @FXML private Label label3;
+    @FXML private BorderPane rootPane;
 
     @FXML
     private void handleChooseFileButtonPressed() {
@@ -40,6 +41,12 @@ public class SFController {
     } 
 
     public void initialize(){
+
+        rootPane.setStyle("-fx-background-color: #2a2b32;");
+        label1.setStyle("-fx-text-fill: #f8f8f8;");
+        label2.setStyle("-fx-text-fill: #f8f8f8;");
+        label3.setStyle("-fx-text-fill: #f8f8f8;");
+
         chooseFilesButton.setOnAction(event -> {
         FileChooser fileChooser = new FileChooser();
         fileChooser.getExtensionFilters().addAll(

@@ -7,8 +7,10 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.stage.FileChooser?>
+<?import javafx.geometry.Insets?>
 
-<BorderPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ntmt.SFController">
+
+<BorderPane fx:id="rootPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ntmt.SFController">
     <center>
         <VBox alignment="CENTER">
             <Button text="Choose File" fx:id="chooseFilesButton" onAction="#handleChooseFileButtonPressed"/>
@@ -23,11 +25,14 @@
     </bottom>
 
     <left>
-        <VBox alignment="CENTER" spacing="10">
+        <VBox alignment="CENTER_LEFT" spacing="10">
+        <padding>
+           <Insets left="30" />
+         </padding>
             <children>
-                <Label text="File Path:"/>
+                <Label fx:id="label1" text="File Path:"/>
                 <TextField fx:id="filePath"/>
-                <Label text="File Name:"/>
+                <Label fx:id="label2" text="File Name:"/>
                 <TextField fx:id="fileName"/>
             </children>
         </VBox>
@@ -35,7 +40,10 @@
 
     <right>
         <VBox alignment="CENTER" spacing="10">
-            <Label text="File Size (in Mb):"/>
+        <padding>
+           <Insets right="30" />
+         </padding>
+            <Label fx:id="label3" text="File Size (in Mb):"/>
             <TextField fx:id="fileSize"/>
         </VBox>
     </right>

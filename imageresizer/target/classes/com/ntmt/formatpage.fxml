@@ -3,12 +3,15 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.stage.FileChooser?>
 
-<BorderPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ntmt.FormatController">
+<BorderPane fx:id="rootPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ntmt.FormatController">
     <center>
         <VBox alignment="CENTER">
             <Button text="Choose File" fx:id="chooseFilesButton" onAction="#handleChooseFileButtonPressed"/>
@@ -23,20 +26,39 @@
     </bottom>
 
     <left>
-        <VBox alignment="CENTER" spacing="10">
+        <VBox alignment="CENTER_LEFT" spacing="10">
+        <padding>
+           <Insets left="30" />
+        </padding>
             <children>
-                <Label text="File Path:"/>
+                <Label fx:id="label1" text="File Path:"/>
                 <TextField fx:id="filePath"/>
-                <Label text="File Name:"/>
+                <Label fx:id="label2" text="File Name:"/>
                 <TextField fx:id="fileName"/>
             </children>
         </VBox>
     </left>
 
     <right>
-        <VBox alignment="CENTER" spacing="10">
-            <Label text="File Tyoe (jpeg or png):"/>
-            <TextField fx:id="fileType"/>
+        <VBox alignment="CENTER_LEFT" spacing="10">
+            <padding>
+               <Insets right="30" />
+            </padding>
+            <Label fx:id="label3" text="Choose the aspect ratio:"/>
+            <fx:define>
+                <ToggleGroup fx:id="group"/>
+            </fx:define>
+
+            <RadioButton fx:id="left1" mnemonicParsing = "false" text = "jpeg">
+            <toggleGroup>
+                <fx:reference source="group"/>
+            </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="left2" mnemonicParsing = "false" text = "png">
+            <toggleGroup>
+                <fx:reference source="group"/>
+            </toggleGroup>
+            </RadioButton>
         </VBox>
     </right>
 

@@ -6,30 +6,26 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
 <?import javafx.stage.FileChooser?>
 
-<BorderPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ntmt.UpscaleController">
+<BorderPane fx:id="rootPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ntmt.UpscaleController">
     <center>
-        <VBox alignment="CENTER">
+        <VBox alignment="CENTER_LEFT" spacing="10">
+            <children>
             <Button text="Choose File" fx:id="chooseFilesButton" onAction="#handleChooseFileButtonPressed"/>
+                <Label fx:id="label1" text="File Path:"/>
+                <TextField fx:id="filePath"/>
+                <Label fx:id="label2" text="File Name:"/>
+                <TextField fx:id="fileName"/>
+            </children>
         </VBox>
     </center>
    
-    <right>
+    <bottom>
         <HBox alignment="CENTER" spacing="10">
             <Button text="Save" onAction="#handleSubmit"/>
             <Button text="Cancel" onAction="#goToHome"/>
         </HBox>
-    </right>
-
-    <left>
-        <VBox alignment="CENTER" spacing="10">
-            <children>
-                <Label text="File Path:"/>
-                <TextField fx:id="filePath"/>
-                <Label text="File Name:"/>
-                <TextField fx:id="fileName"/>
-            </children>
-        </VBox>
-    </left>
+    </bottom>
 </BorderPane>

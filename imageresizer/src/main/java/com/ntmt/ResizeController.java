@@ -2,8 +2,12 @@ package com.ntmt;
 
 import java.io.IOException;
 import javafx.fxml.FXML;
+import javafx.scene.layout.BorderPane;
 
 public class ResizeController {
+    @FXML
+    private BorderPane rootPane;
+
     @FXML
     private void goToBF() throws IOException {
         App.setRoot("batchfilepage");
@@ -26,6 +30,9 @@ public class ResizeController {
         App.setRoot("homepage");
     } 
 
+    public void initialize(){
+        rootPane.setStyle("-fx-background-color: #2a2b32;");
+    }
 }
 
 
