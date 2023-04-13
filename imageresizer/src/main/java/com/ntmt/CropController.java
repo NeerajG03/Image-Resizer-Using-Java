@@ -1,5 +1,8 @@
 package com.ntmt;
+
 import java.io.IOException;
+
+import models.Cropper;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
@@ -16,31 +19,19 @@ import java.io.File;
 
 public class CropController {
     private String selectedValue;
-    @FXML
-    private TextField filePath;
-
-    @FXML
-    private Label label1;
-    @FXML
-    private RadioButton left1;
-    @FXML
-    private RadioButton left2;
-    @FXML
-    private RadioButton left3;
-    @FXML
-    private Label label2;
-    @FXML
-    private Label label3;
-
-    @FXML
-    private BorderPane rootPane;
-
-    @FXML
-    private ToggleGroup group;
-
-    @FXML
-    private TextField fileName;
+    @FXML private TextField filePath;
+    @FXML private Label label1;
+    @FXML private RadioButton left1;
+    @FXML private RadioButton left2;
+    @FXML private RadioButton left3;
+    @FXML private Label label2;
+    @FXML private Label output;
+    @FXML private Label label3;
+    @FXML private BorderPane rootPane;
+    @FXML private ToggleGroup group;
+    @FXML private TextField fileName;
     @FXML private Button chooseFilesButton;
+    
     @FXML
     private void handleChooseFileButtonPressed() {
         System.out.println("");
@@ -48,10 +39,18 @@ public class CropController {
 
     @FXML
     private void handleSubmit() {
-        // Save file using the information in the text fields
-        System.out.println("File path" + filePath.getText());
-        System.out.println("File name" + fileName.getText());
-        System.out.println("Aspect Ratio" + selectedValue);
+        System.out.println("File path : " + filePath.getText());
+        System.out.println("File name : " + fileName.getText());
+        System.out.println("Aspect Ratio : " + selectedValue);
+        Cropper crop = new Cropper(filePath.getText() +"/"+fileName.getText(),selectedValue);
+        int value = crop.crop();
+        if (value == 1){
+            output.setText("Output Generated!");
+        }
+        else {
+            output.setText("Error while generating a crop!");
+
+        }
     }
 
     @FXML
@@ -69,6 +68,7 @@ public class CropController {
         label1.setStyle("-fx-text-fill: #f8f8f8;");
         label2.setStyle("-fx-text-fill: #f8f8f8;");
         label3.setStyle("-fx-text-fill: #f8f8f8;");
+        output.setStyle("-fx-text-fill: #f8f8f8;");
         chooseFilesButton.setOnAction(event -> {
         FileChooser fileChooser = new FileChooser();
         fileChooser.getExtensionFilters().addAll(

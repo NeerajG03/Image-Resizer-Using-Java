@@ -9,10 +9,8 @@ import javafx.scene.layout.AnchorPane;
 
 
 public class PPController {
-    @FXML
-    private TextField fileSize;
-    @FXML
-    private AnchorPane rootPane;
+    @FXML private TextField fileSize;
+    @FXML private AnchorPane rootPane;
     
     @FXML
     private Label label1;

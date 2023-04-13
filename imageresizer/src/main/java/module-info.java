@@ -1,6 +1,7 @@
 module com.ntmt {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.desktop;
     requires transitive javafx.graphics;
 
 

@@ -13,20 +13,13 @@ import java.io.File;
 
 public class UpscaleController {
 
-    @FXML
-    private TextField filePath;
-
-    @FXML
-    private BorderPane rootPane;
-
-    @FXML
-    private Label label1;
-    @FXML
-    private Label label2;
-
-    @FXML
-    private TextField fileName;
+    @FXML private TextField filePath;
+    @FXML private BorderPane rootPane;
+    @FXML private Label label1;
+    @FXML private Label label2;
+    @FXML private TextField fileName;
     @FXML private Button chooseFilesButton;
+    
     @FXML
     private void handleChooseFileButtonPressed() {
         System.out.println("");

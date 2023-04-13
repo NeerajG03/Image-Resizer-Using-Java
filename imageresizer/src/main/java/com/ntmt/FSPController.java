@@ -8,16 +8,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
 public class FSPController {
-    @FXML
-    private TextField fileSize;
+    @FXML private TextField fileSize;
+    @FXML private AnchorPane rootPane;
+    @FXML private Label label1;
 
-    @FXML
-    private AnchorPane rootPane;
-    
-    @FXML
-    private Label label1;
-
-    @FXML
+    @FXML 
     private void handleSubmit() {
         // Save file using the information in the text fields
         System.out.println("File Size" + fileSize.getText());

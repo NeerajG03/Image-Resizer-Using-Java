@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.stage.FileChooser?>
 
-<BorderPane fx:id="rootPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ntmt.FormatController">
+<BorderPane fx:id="rootPane" xmlns="http://javafx.com/javafx/13" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ntmt.FormatController">
     <center>
         <VBox alignment="CENTER">
             <Button text="Choose File" fx:id="chooseFilesButton" onAction="#handleChooseFileButtonPressed"/>
@@ -24,6 +24,11 @@
             <Button text="Cancel" onAction="#goToHome"/>
         </HBox>
     </bottom>
+    <top>
+        <VBox alignment="CENTER_RIGHT" spacing ="10">
+            <Label fx:id="output"/>
+        </VBox>
+    </top>
 
     <left>
         <VBox alignment="CENTER_LEFT" spacing="10">
@@ -49,7 +54,7 @@
                 <ToggleGroup fx:id="group"/>
             </fx:define>
 
-            <RadioButton fx:id="left1" mnemonicParsing = "false" text = "jpeg">
+            <RadioButton fx:id="left1" mnemonicParsing = "false" text = "jpg">
             <toggleGroup>
                 <fx:reference source="group"/>
             </toggleGroup>
