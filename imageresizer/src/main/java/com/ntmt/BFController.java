@@ -17,6 +17,7 @@ public class BFController {
     @FXML private Button chooseFilesButton;
     @FXML private AnchorPane rootPane;
     @FXML private Label label1;
+    @FXML private Label recommend;
     @FXML private Label label3;
     @FXML private Label selectedFilesLabel;
     @FXML private TextField fileSize;
@@ -28,6 +29,7 @@ public class BFController {
         label1.setStyle("-fx-text-fill: #f8f8f8;");
         selectedFilesLabel.setStyle("-fx-text-fill: #f8f8f8;");
         label3.setStyle("-fx-text-fill: #f8f8f8;");
+        recommend.setStyle("-fx-text-fill: #f8f8f8;");
 
         chooseFilesButton.setOnAction(event -> {
             FileChooser fileChooser = new FileChooser();

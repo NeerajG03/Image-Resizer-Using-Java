@@ -37,7 +37,11 @@
             </children>
         </VBox>
     </left>
-
+    <top>
+        <VBox alignment="CENTER_RIGHT" spacing ="10">
+            <Label fx:id="output"/>
+        </VBox>
+    </top>
     <right>
         <VBox alignment="CENTER" spacing="10">
         <padding>
@@ -46,6 +50,7 @@
         <children>
             <Label fx:id="label3" text="Height (in px):"/>
             <TextField fx:id="imgHeight"/>
+            <Label fx:id = "recommend" text = "Recommended range : 0-30%"/>
         </children>
         </VBox>
     </right>

@@ -43,8 +43,10 @@
         <padding>
            <Insets right="30" />
          </padding>
-            <Label fx:id="label3" text="File Size (in Mb):"/>
+            <Label fx:id="label3" text="Reduction Rate (in %):"/>
             <TextField fx:id="fileSize"/>
+            <Label fx:id = "recommend" text = "Recommended range : 0-50%"/>
+
         </VBox>
     </right>
 

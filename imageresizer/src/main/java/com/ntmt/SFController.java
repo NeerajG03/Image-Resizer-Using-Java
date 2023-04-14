@@ -18,6 +18,7 @@ public class SFController {
     @FXML private TextField fileName;
     @FXML private TextField fileSize;
     @FXML private Label label1;
+    @FXML private Label recommend;
     @FXML private Label label2;
     @FXML private Label label3;
     @FXML private BorderPane rootPane;
@@ -46,6 +47,7 @@ public class SFController {
         label1.setStyle("-fx-text-fill: #f8f8f8;");
         label2.setStyle("-fx-text-fill: #f8f8f8;");
         label3.setStyle("-fx-text-fill: #f8f8f8;");
+        recommend.setStyle("-fx-text-fill: #f8f8f8;");
 
         chooseFilesButton.setOnAction(event -> {
         FileChooser fileChooser = new FileChooser();
@@ -58,6 +60,8 @@ public class SFController {
             filePath.setText(selectedFile.getParent());
             fileName.setText(selectedFile.getName());
         }
+        long fileSizeBytes = selectedFile.length();
+        recommend.setText(recommend.getText()+ "\nSelected file size : " + (fileSizeBytes/1024) + "KB");
     });
     }
 }
