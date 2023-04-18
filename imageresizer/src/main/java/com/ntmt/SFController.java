@@ -8,6 +8,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.FileChooser;
+import models.ImageResizerFile;
 
 import java.io.File;
 
@@ -21,6 +22,7 @@ public class SFController {
     @FXML private Label recommend;
     @FXML private Label label2;
     @FXML private Label label3;
+    @FXML private Label output;
     @FXML private BorderPane rootPane;
 
     @FXML
@@ -34,6 +36,16 @@ public class SFController {
         System.out.println("File path" + filePath.getText());
         System.out.println("File Size" + fileSize.getText());
         System.out.println("File name" + fileName.getText());
+        ImageResizerFile resizer = new ImageResizerFile(filePath.getText()+"\\"+fileName.getText());
+        int value = Integer.parseInt(fileSize.getText());
+        int res = resizer.resize(value);
+        if (res == 1){
+            output.setText("Output Generated!");
+        }
+        else {
+            output.setText("Error while generating a crop!");
+
+        }
     }
 
     @FXML
@@ -47,6 +59,8 @@ public class SFController {
         label1.setStyle("-fx-text-fill: #f8f8f8;");
         label2.setStyle("-fx-text-fill: #f8f8f8;");
         label3.setStyle("-fx-text-fill: #f8f8f8;");
+        output.setStyle("-fx-text-fill: #f8f8f8;");
+
         recommend.setStyle("-fx-text-fill: #f8f8f8;");
 
         chooseFilesButton.setOnAction(event -> {

@@ -5,7 +5,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.geometry.Pos?>
 
-<AnchorPane fx:id="rootPane" prefHeight="400" prefWidth="600" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ntmt.PPController">
+<AnchorPane fx:id="rootPane" prefHeight="400" prefWidth="600" xmlns="http://javafx.com/javafx/13" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ntmt.PPController">
     
     <VBox spacing="10" alignment="CENTER" AnchorPane.topAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
         <HBox spacing="10" alignment="CENTER">

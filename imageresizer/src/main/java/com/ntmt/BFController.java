@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
+import models.ImageResizerFile;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
@@ -19,6 +20,7 @@ public class BFController {
     @FXML private Label label1;
     @FXML private Label recommend;
     @FXML private Label label3;
+    @FXML private Label output;
     @FXML private Label selectedFilesLabel;
     @FXML private TextField fileSize;
     @FXML private Button submit;
@@ -29,6 +31,7 @@ public class BFController {
         label1.setStyle("-fx-text-fill: #f8f8f8;");
         selectedFilesLabel.setStyle("-fx-text-fill: #f8f8f8;");
         label3.setStyle("-fx-text-fill: #f8f8f8;");
+        output.setStyle("-fx-text-fill: #f8f8f8;");
         recommend.setStyle("-fx-text-fill: #f8f8f8;");
 
         chooseFilesButton.setOnAction(event -> {
@@ -56,6 +59,21 @@ public class BFController {
         for (File file : files) {
             System.out.println(file.getName());
             System.out.println(file.getParent());
+            // for (File file : files) {
+                System.out.println(file.getAbsolutePath());
+                try {
+                    int size = Integer.parseInt(fileSize.getText());
+                    ImageResizerFile resizer = new ImageResizerFile(file.getAbsolutePath());
+                    int result = resizer.resize(size);
+                    if (result == 1){
+                        output.setText("Output Generated!");
+                    }
+                    else{
+                        output.setText("Erro while converting format!");
+                    }
+                } catch (NumberFormatException n){
+                    output.setText("Give valid integer!");
+                }
         }
         System.out.println("file size ->"+fileSize.getText());
     }

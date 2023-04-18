@@ -21,7 +21,7 @@
             <Button prefWidth="100" fx:id="upscale" mnemonicParsing="false" text="Upscale" onAction="#switchToUpscale"/>
             <Button prefWidth="100" fx:id="resize" mnemonicParsing="false" text="Resize" onAction="#switchToResize"/>
             <Button prefWidth="100" fx:id="format" mnemonicParsing="false" text="Format" onAction="#switchToFormat"/>
-            <Button prefWidth="100" fx:id="preset" mnemonicParsing="false" text="Preset" onAction="#switchToPreset"/>
+            <!-- <Button prefWidth="100" fx:id="preset" mnemonicParsing="false" text="Preset" onAction="#switchToPreset"/> -->
          </children>
       </VBox>
    </left>

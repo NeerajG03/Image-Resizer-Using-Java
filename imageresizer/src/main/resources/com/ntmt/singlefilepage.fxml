@@ -10,7 +10,15 @@
 <?import javafx.geometry.Insets?>
 
 
-<BorderPane fx:id="rootPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ntmt.SFController">
+<BorderPane fx:id="rootPane" xmlns="http://javafx.com/javafx/13" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ntmt.SFController">
+    <top>
+        <VBox alignment="CENTER_RIGHT" spacing="10">
+            <padding>
+                <Insets top="10" left="30"/>
+            </padding>
+            <Label fx:id="output" />
+        </VBox>
+    </top>
     <center>
         <VBox alignment="CENTER">
             <Button text="Choose File" fx:id="chooseFilesButton" onAction="#handleChooseFileButtonPressed"/>
@@ -23,6 +31,7 @@
             <Button text="Cancel" onAction="#goToHome"/>
         </HBox>
     </bottom>
+
 
     <left>
         <VBox alignment="CENTER_LEFT" spacing="10">
@@ -43,7 +52,7 @@
         <padding>
            <Insets right="30" />
          </padding>
-            <Label fx:id="label3" text="Reduction Rate (in %):"/>
+            <Label fx:id="label3" text="Target Size (in Kb):"/>
             <TextField fx:id="fileSize"/>
             <Label fx:id = "recommend" text = "Recommended range : 0-50%"/>
 

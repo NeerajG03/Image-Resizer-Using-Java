@@ -10,7 +10,7 @@
 <?import javafx.geometry.Insets?>
 
 
-<BorderPane fx:id="rootPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ntmt.SPController">
+<BorderPane fx:id="rootPane" xmlns="http://javafx.com/javafx/13" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ntmt.SPController">
     <center>
         <VBox alignment="CENTER">
             <Button text="Choose File" fx:id="chooseFilesButton" onAction="#handleChooseFileButtonPressed"/>

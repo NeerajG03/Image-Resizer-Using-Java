@@ -8,6 +8,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.FileChooser;
+import models.Upscaler;
 
 import java.io.File;
 
@@ -17,6 +18,7 @@ public class UpscaleController {
     @FXML private BorderPane rootPane;
     @FXML private Label label1;
     @FXML private Label label2;
+    @FXML private Label output;
     @FXML private TextField fileName;
     @FXML private Button chooseFilesButton;
     
@@ -30,6 +32,14 @@ public class UpscaleController {
         // Save file using the information in the text fields
         System.out.println("File path" + filePath.getText());
         System.out.println("File name" + fileName.getText());
+        Upscaler upscale = new Upscaler(filePath.getText() + "\\" + fileName.getText());
+        int res = upscale.upscale();
+        if (res == -1){
+            output.setText("Error while generating output!");
+        }
+        else{
+            output.setText("Output Generated!");
+        }
     }
 
     @FXML
@@ -41,6 +51,7 @@ public class UpscaleController {
         rootPane.setStyle("-fx-background-color: #2a2b32;");
         label1.setStyle("-fx-text-fill: #f8f8f8;");
         label2.setStyle("-fx-text-fill: #f8f8f8;");
+        output.setStyle("-fx-text-fill: #f8f8f8;");
         
         chooseFilesButton.setOnAction(event -> {
         FileChooser fileChooser = new FileChooser();
